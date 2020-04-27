@@ -14,12 +14,12 @@
         android:allowBackup="true"
         android:debuggable="true"
         android:icon="@drawable/icon"
-        android:label="@string/app_name"
+        android:label="蜻蜓科技"
         android:theme="@style/AppTheme" >
         <activity
             android:name="cn.wch.ch34xuartdriver.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/app_name"
+            android:label="蜻蜓科技"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
             <intent-filter>

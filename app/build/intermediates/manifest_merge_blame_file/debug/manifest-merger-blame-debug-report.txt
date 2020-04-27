@@ -22,8 +22,8 @@
 15        android:debuggable="true"
 16        android:icon="@drawable/icon"
 16-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:11:9-38
-17        android:label="@string/app_name"
-17-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:12:9-41
+17        android:label="蜻蜓科技"
+17-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:12:9-29
 18        android:theme="@style/AppTheme" >
 18-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:13:9-40
 19        <activity
@@ -32,8 +32,8 @@
 20-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:15:13-63
 21            android:configChanges="keyboardHidden|orientation|screenSize"
 21-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:18:13-74
-22            android:label="@string/app_name"
-22-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:17:13-45
+22            android:label="蜻蜓科技"
+22-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:17:13-33
 23            android:launchMode="singleTask"
 23-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:19:13-44
 24            android:screenOrientation="portrait" >
