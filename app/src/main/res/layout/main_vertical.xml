@@ -34,19 +34,6 @@
             android:textOff="字符型"
             android:textOn="16进制" />
 
-
-        <Button
-            android:id="@+id/parameter"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:background="@drawable/button_pattern"
-            android:enabled="false"
-            android:gravity="center"
-            android:scaleType="centerInside"
-            android:text="@string/parameter"
-            android:visibility="gone" />
-
         <Button
             android:id="@+id/configButton"
             android:layout_width="fill_parent"

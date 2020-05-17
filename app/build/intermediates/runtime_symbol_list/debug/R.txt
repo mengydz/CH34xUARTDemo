@@ -17,7 +17,6 @@ int id clearButton 0x7f040005
 int id configButton 0x7f040006
 int id hexbuton 0x7f040007
 int id open_device 0x7f040008
-int id parameter 0x7f040009
 int layout main_vertical 0x7f050000
 int layout my_spinner_textview 0x7f050001
 int string action_settings 0x7f060000

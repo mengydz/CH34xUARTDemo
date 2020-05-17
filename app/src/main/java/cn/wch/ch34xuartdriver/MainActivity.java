@@ -69,9 +69,6 @@ public class MainActivity extends Activity {
     public SharedPreferences sharePrefSettings;
     public String act_string;
 
-    public int totalrecv;
-    ToggleButton HexandSting;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -171,7 +168,6 @@ public class MainActivity extends Activity {
                         e.printStackTrace();
                     }
                     MyApp.driver.CloseDevice();
-                    totalrecv = 0;
                 }
             }
         });
@@ -233,7 +229,6 @@ public class MainActivity extends Activity {
 
     //处理界面
     private void initUI() {
-        HexandSting = (ToggleButton) findViewById(R.id.hexbuton);
         openButton = (Button) findViewById(R.id.open_device);
         configButton = (Button) findViewById(R.id.configButton);
         readText = (EditText) findViewById(R.id.ReadValues);
@@ -245,7 +240,6 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View arg0) {
-                totalrecv = 0;
                 readText.setText("");
             }
         });
