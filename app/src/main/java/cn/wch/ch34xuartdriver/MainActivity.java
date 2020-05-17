@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
     private int retval;
     private MainActivity activity;
 
-    private Button writeButton, configButton, openButton, clearButton;
+    private Button writeButton, openButton, clearButton;
 
     public byte[] writeBuffer;
     public byte[] readBuffer;
@@ -98,7 +98,6 @@ public class MainActivity extends Activity {
         writeBuffer = new byte[512];
         readBuffer = new byte[512];
         isOpen = false;
-        configButton.setEnabled(false);
         writeButton.setEnabled(false);
         activity = this;
 
@@ -107,6 +106,12 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View arg0) {
+                int _baudrate = 115200;
+                byte _datebit = 8;
+                byte _stopbit = 1;
+                byte _parity = 0;
+                byte _flowcontrol = 0;
+
                 if (!isOpen) {
                     retval = MyApp.driver.ResumeUsbList();
                     if (retval == -1)// ResumeUsbList方法用于枚举CH34X设备以及打开相关设备
@@ -125,9 +130,16 @@ public class MainActivity extends Activity {
                         }
                         Toast.makeText(MainActivity.this, "打开设备成功!",
                                 Toast.LENGTH_SHORT).show();
+                        /******配置串口*********************************************************/
+                        if (MyApp.driver.SetConfig(_baudrate, _datebit, _stopbit, _parity, _flowcontrol)) {//配置串口波特率，函数说明可参照编程手册
+                            Toast.makeText(MainActivity.this, "串口设置成功!",
+                                    Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, "串口设置失败!",
+                                    Toast.LENGTH_SHORT).show();
+                        }
                         isOpen = true;
                         openButton.setText("Close");
-                        configButton.setEnabled(true);
                         writeButton.setEnabled(true);
                         new readThread().start();//开启读线程读取串口接收的数据
                     } else {
@@ -158,7 +170,6 @@ public class MainActivity extends Activity {
                     }
                 } else {
                     openButton.setText("Open");
-                    configButton.setEnabled(false);
                     writeButton.setEnabled(false);
                     isOpen = false;
                     try {
@@ -172,22 +183,11 @@ public class MainActivity extends Activity {
             }
         });
 
-        configButton.setOnClickListener(new View.OnClickListener() {
+        clearButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-                int _baudrate = 115200;
-                byte _datebit = 8;
-                byte _stopbit = 1;
-                byte _parity = 0;
-                byte _flowcontrol = 0;
-                if (MyApp.driver.SetConfig(_baudrate, _datebit, _stopbit, _parity, _flowcontrol)) {//配置串口波特率，函数说明可参照编程手册
-                    Toast.makeText(MainActivity.this, "串口设置成功!",
-                            Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "串口设置失败!",
-                            Toast.LENGTH_SHORT).show();
-                }
+                readText.setText("接收内容");
             }
         });
 
@@ -230,19 +230,11 @@ public class MainActivity extends Activity {
     //处理界面
     private void initUI() {
         openButton = (Button) findViewById(R.id.open_device);
-        configButton = (Button) findViewById(R.id.configButton);
         readText = (EditText) findViewById(R.id.ReadValues);
         writeText = (EditText) findViewById(R.id.WriteValues);
         writeButton = (Button) findViewById(R.id.WriteButton);
         clearButton = (Button) findViewById(R.id.clearButton);
 
-        clearButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                readText.setText("");
-            }
-        });
         return;
     }
 

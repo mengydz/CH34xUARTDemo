@@ -17,7 +17,7 @@
     <string name="write">Write</string>
     <string name="open">Open</string>
     <string name="clear">Clear</string>
-    <string name="hint">Hex Input</string>
+    <string name="hint">点击输入发送内容</string>
     <string name="parameter">参数</string>
     <string-array name="baud_rate">        
 		<item>300</item>        
