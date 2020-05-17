@@ -47,11 +47,6 @@ public class MainActivity extends Activity {
     protected final Object ThreadLock = new Object();
     private EditText readText;
     private EditText writeText;
-    private Spinner baudSpinner;
-    private Spinner stopSpinner;
-    private Spinner dataSpinner;
-    private Spinner paritySpinner;
-    private Spinner flowSpinner;
     private boolean isOpen;
     private Handler handler;
     private int retval;
@@ -69,13 +64,6 @@ public class MainActivity extends Activity {
     public byte writeIndex = 0;
     public byte readIndex = 0;
 
-    public int baudRate;
-    public byte baudRate_byte;
-    public byte stopBit;
-    public byte dataBit;
-    public byte parity;
-    public byte flowControl;
-
     public boolean isConfiged = false;
     public boolean READ_ENABLE = false;
     public SharedPreferences sharePrefSettings;
@@ -83,7 +71,6 @@ public class MainActivity extends Activity {
 
     public int totalrecv;
     ToggleButton HexandSting;
-    int md_switch = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -193,9 +180,12 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View arg0) {
-
-                if (MyApp.driver.SetConfig(baudRate, dataBit, stopBit, parity,//配置串口波特率，函数说明可参照编程手册
-                        flowControl)) {
+                int _baudrate = 115200;
+                byte _datebit = 8;
+                byte _stopbit = 1;
+                byte _parity = 0;
+                byte _flowcontrol = 0;
+                if (MyApp.driver.SetConfig(_baudrate, _datebit, _stopbit, _parity, _flowcontrol)) {//配置串口波特率，函数说明可参照编程手册
                     Toast.makeText(MainActivity.this, "串口设置成功!",
                             Toast.LENGTH_SHORT).show();
                 } else {
@@ -204,41 +194,17 @@ public class MainActivity extends Activity {
                 }
             }
         });
-        HexandSting = (ToggleButton) findViewById(R.id.hexbuton);
-        HexandSting.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-                Log.e("toggle_flash开关", "开关点击");
-                if (arg1 == true) {
-                    md_switch = 1;
-                } else {
-                    md_switch = 0;
-                }
-            }
-        });
+
         writeButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
 
-                if (md_switch == 1) {
-                    byte[] to_send = toByteArray(writeText.getText().toString());
-//				byte[] to_send = toByteArray2(writeText.getText().toString());
+                    byte[] to_send = {0x31,0x32,0x33};//toByteArray(writeText.getText().toString());
                     int retval = MyApp.driver.WriteData(to_send, to_send.length);//写数据，第一个参数为需要发送的字节数组，第二个参数为需要发送的字节长度，返回实际发送的字节长度
                     if (retval < 0)
                         Toast.makeText(MainActivity.this, "写失败!",
                                 Toast.LENGTH_SHORT).show();
-                } else {
-
-
-                    byte[] to_send = toByteArray2(writeText.getText().toString());   //输入字符型
-                    int retval = MyApp.driver.WriteData(to_send, to_send.length);
-                    //写数据，第一个参数为需要发送的字节数组，第二个参数为需要发送的字节长度，返回实际发送的字节长度
-                    if (retval < 0)
-                        Toast.makeText(MainActivity.this, "写失败!",
-                                Toast.LENGTH_SHORT).show();
-                }
-
             }
         });
 
@@ -267,80 +233,13 @@ public class MainActivity extends Activity {
 
     //处理界面
     private void initUI() {
+        HexandSting = (ToggleButton) findViewById(R.id.hexbuton);
+        openButton = (Button) findViewById(R.id.open_device);
+        configButton = (Button) findViewById(R.id.configButton);
         readText = (EditText) findViewById(R.id.ReadValues);
         writeText = (EditText) findViewById(R.id.WriteValues);
-        configButton = (Button) findViewById(R.id.configButton);
         writeButton = (Button) findViewById(R.id.WriteButton);
-        openButton = (Button) findViewById(R.id.open_device);
         clearButton = (Button) findViewById(R.id.clearButton);
-
-        baudSpinner = (Spinner) findViewById(R.id.baudRateValue);
-        ArrayAdapter<CharSequence> baudAdapter = ArrayAdapter
-                .createFromResource(this, R.array.baud_rate,
-                        R.layout.my_spinner_textview);
-        baudAdapter.setDropDownViewResource(R.layout.my_spinner_textview);
-        baudSpinner.setAdapter(baudAdapter);
-        baudSpinner.setGravity(0x10);
-        baudSpinner.setSelection(5);
-        /* by default it is 9600 */
-        baudRate = 9600;
-
-        /* stop bits */
-        stopSpinner = (Spinner) findViewById(R.id.stopBitValue);
-        ArrayAdapter<CharSequence> stopAdapter = ArrayAdapter
-                .createFromResource(this, R.array.stop_bits,
-                        R.layout.my_spinner_textview);
-        stopAdapter.setDropDownViewResource(R.layout.my_spinner_textview);
-        stopSpinner.setAdapter(stopAdapter);
-        stopSpinner.setGravity(0x01);
-        /* default is stop bit 1 */
-        stopBit = 1;
-
-        /* data bits */
-        dataSpinner = (Spinner) findViewById(R.id.dataBitValue);
-        ArrayAdapter<CharSequence> dataAdapter = ArrayAdapter
-                .createFromResource(this, R.array.data_bits,
-                        R.layout.my_spinner_textview);
-        dataAdapter.setDropDownViewResource(R.layout.my_spinner_textview);
-        dataSpinner.setAdapter(dataAdapter);
-        dataSpinner.setGravity(0x11);
-        dataSpinner.setSelection(3);
-        /* default data bit is 8 bit */
-        dataBit = 8;
-
-        /* parity */
-        paritySpinner = (Spinner) findViewById(R.id.parityValue);
-        ArrayAdapter<CharSequence> parityAdapter = ArrayAdapter
-                .createFromResource(this, R.array.parity,
-                        R.layout.my_spinner_textview);
-        parityAdapter.setDropDownViewResource(R.layout.my_spinner_textview);
-        paritySpinner.setAdapter(parityAdapter);
-        paritySpinner.setGravity(0x11);
-        /* default is none */
-        parity = 0;
-
-        /* flow control */
-        flowSpinner = (Spinner) findViewById(R.id.flowControlValue);
-        ArrayAdapter<CharSequence> flowAdapter = ArrayAdapter
-                .createFromResource(this, R.array.flow_control,
-                        R.layout.my_spinner_textview);
-        flowAdapter.setDropDownViewResource(R.layout.my_spinner_textview);
-        flowSpinner.setAdapter(flowAdapter);
-        flowSpinner.setGravity(0x11);
-        /* default flow control is is none */
-        flowControl = 0;
-
-        /* set the adapter listeners for baud */
-        baudSpinner.setOnItemSelectedListener(new MyOnBaudSelectedListener());
-        /* set the adapter listeners for stop bits */
-        stopSpinner.setOnItemSelectedListener(new MyOnStopSelectedListener());
-        /* set the adapter listeners for data bits */
-        dataSpinner.setOnItemSelectedListener(new MyOnDataSelectedListener());
-        /* set the adapter listeners for parity */
-        paritySpinner
-                .setOnItemSelectedListener(new MyOnParitySelectedListener());
-        /* set the adapter listeners for flow control */
-        flowSpinner.setOnItemSelectedListener(new MyOnFlowSelectedListener());
 
         clearButton.setOnClickListener(new View.OnClickListener() {
 
@@ -351,111 +250,6 @@ public class MainActivity extends Activity {
             }
         });
         return;
-    }
-
-    public class MyOnBaudSelectedListener implements OnItemSelectedListener {
-
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view,
-                                   int position, long id) {
-            baudRate = Integer.parseInt(parent.getItemAtPosition(position)
-                    .toString());
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> parent) {
-
-        }
-    }
-
-    public class MyOnStopSelectedListener implements OnItemSelectedListener {
-
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view,
-                                   int position, long id) {
-            stopBit = (byte) Integer.parseInt(parent
-                    .getItemAtPosition(position).toString());
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> parent) {
-
-        }
-
-    }
-
-    public class MyOnDataSelectedListener implements OnItemSelectedListener {
-
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view,
-                                   int position, long id) {
-            dataBit = (byte) Integer.parseInt(parent
-                    .getItemAtPosition(position).toString());
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> parent) {
-
-        }
-
-    }
-
-    public class MyOnParitySelectedListener implements OnItemSelectedListener {
-
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view,
-                                   int position, long id) {
-            String parityString = new String(parent.getItemAtPosition(position)
-                    .toString());
-            if (parityString.compareTo("None") == 0) {
-                parity = 0;
-            }
-
-            if (parityString.compareTo("Odd") == 0) {
-                parity = 1;
-            }
-
-            if (parityString.compareTo("Even") == 0) {
-                parity = 2;
-            }
-
-            if (parityString.compareTo("Mark") == 0) {
-                parity = 3;
-            }
-
-            if (parityString.compareTo("Space") == 0) {
-                parity = 4;
-            }
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> parent) {
-
-        }
-
-    }
-
-    public class MyOnFlowSelectedListener implements OnItemSelectedListener {
-
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view,
-                                   int position, long id) {
-            String flowString = new String(parent.getItemAtPosition(position)
-                    .toString());
-            if (flowString.compareTo("None") == 0) {
-                flowControl = 0;
-            }
-
-            if (flowString.compareTo("CTS/RTS") == 0) {
-                flowControl = 1;
-            }
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> parent) {
-
-        }
-
     }
 
     private class readThread extends Thread {
@@ -472,17 +266,8 @@ public class MainActivity extends Activity {
                 }
                 int length = MyApp.driver.ReadData(buffer, 64);
                 if (length > 0) {
-//					
-
-
-                    if (md_switch == 1) {
                         String recv = toHexString(buffer, length);
                         msg.obj = recv;
-                    } else {
-                        String recv = new String(buffer, 0, length);
-                        msg.obj = recv;
-                    }
-
                     handler.sendMessage(msg);
 
                 }
@@ -497,7 +282,7 @@ public class MainActivity extends Activity {
      * @param length 需要转换的数组长度
      * @return 转换后的String队形
      */
-    private String toHexString(byte[] arg, int length) {
+    private String toHexString(byte[] arg, int length) {//BytetoString
         String result = new String();
         if (arg != null) {
             for (int i = 0; i < length; i++) {

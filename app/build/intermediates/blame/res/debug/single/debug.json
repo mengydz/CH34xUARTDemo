@@ -8,10 +8,6 @@
         "source": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\src\\main\\res\\drawable-hdpi\\icon.png"
     },
     {
-        "merged": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\build\\intermediates\\res\\merged\\debug\\layout_main.xml.flat",
-        "source": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\src\\main\\res\\layout\\main.xml"
-    },
-    {
         "merged": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
     },
