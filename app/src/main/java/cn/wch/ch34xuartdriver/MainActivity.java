@@ -33,7 +33,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 import android.util.Log;
@@ -49,6 +51,12 @@ public class MainActivity extends Activity {
     private EditText writeText;
     private boolean isOpen;
     private Handler handler;
+    private LinearLayout linerBaseData;
+    private LinearLayout linerProData;
+    private TextView tvBaseData;
+    private TextView tvProData;
+    private TextView tvSetData;
+    private TextView tvUpdate;
     private int retval;
     private MainActivity activity;
 
@@ -183,14 +191,6 @@ public class MainActivity extends Activity {
             }
         });
 
-        clearButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                readText.setText("接收内容");
-            }
-        });
-
         writeButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -201,6 +201,37 @@ public class MainActivity extends Activity {
                     if (retval < 0)
                         Toast.makeText(MainActivity.this, "写失败!",
                                 Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tvBaseData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                linerProData.setVisibility(View.GONE);
+                linerBaseData.setVisibility(View.VISIBLE);
+            }
+        });
+
+        tvProData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                linerBaseData.setVisibility(View.GONE);
+                linerProData.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        tvSetData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                linerBaseData.setVisibility(View.GONE);
+            }
+        });
+
+        tvUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                linerBaseData.setVisibility(View.GONE);
             }
         });
 
@@ -230,11 +261,16 @@ public class MainActivity extends Activity {
     //处理界面
     private void initUI() {
         openButton = (Button) findViewById(R.id.open_device);
-        readText = (EditText) findViewById(R.id.ReadValues);
+        readText = (EditText) findViewById(R.id.serial_num);
         writeText = (EditText) findViewById(R.id.WriteValues);
         writeButton = (Button) findViewById(R.id.WriteButton);
-        clearButton = (Button) findViewById(R.id.clearButton);
 
+        linerBaseData = (LinearLayout) findViewById(R.id.base_data_page);
+        linerProData = (LinearLayout) findViewById(R.id.pro_data_page);
+        tvBaseData = (TextView)findViewById(R.id.tv_base_data);
+        tvProData = (TextView)findViewById(R.id.tv_pro_data);
+        tvSetData = (TextView)findViewById(R.id.tv_set_data);
+        tvUpdate = (TextView)findViewById(R.id.tv_update_data);
         return;
     }
 

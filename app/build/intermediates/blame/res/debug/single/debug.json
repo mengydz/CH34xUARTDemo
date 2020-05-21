@@ -24,6 +24,10 @@
         "source": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\src\\main\\res\\drawable-hdpi\\button_pattern.xml"
     },
     {
+        "merged": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\build\\intermediates\\res\\merged\\debug\\layout_pro_vertical.xml.flat",
+        "source": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\src\\main\\res\\layout\\pro_vertical.xml"
+    },
+    {
         "merged": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\build\\intermediates\\res\\merged\\debug\\xml_device_filter.xml.flat",
         "source": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\src\\main\\res\\xml\\device_filter.xml"
     },

@@ -24,54 +24,55 @@
 16-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:11:9-38
 17        android:label="蜻蜓科技"
 17-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:12:9-29
-18        android:theme="@style/AppTheme" >
-18-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:13:9-40
-19        <activity
-19-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:14:9-39:20
-20            android:name="cn.wch.ch34xuartdriver.MainActivity"
-20-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:15:13-63
-21            android:configChanges="keyboardHidden|orientation|screenSize"
-21-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:18:13-74
-22            android:label="蜻蜓科技"
-22-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:17:13-33
-23            android:launchMode="singleTask"
-23-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:19:13-44
-24            android:screenOrientation="portrait" >
-24-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:16:13-49
-25            <intent-filter>
-25-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:20:13-24:29
-26                <action android:name="android.intent.action.MAIN" />
-26-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:21:17-69
-26-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:21:25-66
-27
-28                <category android:name="android.intent.category.LAUNCHER" />
-28-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:23:17-77
-28-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:23:27-74
-29            </intent-filter>
-30            <intent-filter>
-30-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:26:4-28:20
-31                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
-31-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:27:6-79
-31-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:27:14-76
-32            </intent-filter>
-33            <intent-filter>
-33-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:32:14-35:29
-34                <action android:name="android.media.action.IMAGE_CAPTURE" />
-34-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:33:17-76
-34-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:33:25-74
-35
-36                <category android:name="android.intent.category.DEFAULT" />
-36-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:34:17-75
-36-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:34:27-73
-37            </intent-filter>
-38
-39            <meta-data
-39-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:36:6-120
-40                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
-40-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:36:17-79
-41                android:resource="@xml/device_filter" />
-41-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:36:80-117
-42        </activity>
-43    </application>
-44
-45</manifest>
+18        android:testOnly="true"
+19        android:theme="@style/AppTheme" >
+19-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:13:9-40
+20        <activity
+20-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:14:9-39:20
+21            android:name="cn.wch.ch34xuartdriver.MainActivity"
+21-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:15:13-63
+22            android:configChanges="keyboardHidden|orientation|screenSize"
+22-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:18:13-74
+23            android:label="蜻蜓科技"
+23-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:17:13-33
+24            android:launchMode="singleTask"
+24-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:19:13-44
+25            android:screenOrientation="portrait" >
+25-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:16:13-49
+26            <intent-filter>
+26-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:20:13-24:29
+27                <action android:name="android.intent.action.MAIN" />
+27-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:21:17-69
+27-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:21:25-66
+28
+29                <category android:name="android.intent.category.LAUNCHER" />
+29-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:23:17-77
+29-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:23:27-74
+30            </intent-filter>
+31            <intent-filter>
+31-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:26:4-28:20
+32                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+32-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:27:6-79
+32-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:27:14-76
+33            </intent-filter>
+34            <intent-filter>
+34-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:32:14-35:29
+35                <action android:name="android.media.action.IMAGE_CAPTURE" />
+35-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:33:17-76
+35-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:33:25-74
+36
+37                <category android:name="android.intent.category.DEFAULT" />
+37-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:34:17-75
+37-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:34:27-73
+38            </intent-filter>
+39
+40            <meta-data
+40-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:36:6-120
+41                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+41-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:36:17-79
+42                android:resource="@xml/device_filter" />
+42-->C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:36:80-117
+43        </activity>
+44    </application>
+45
+46</manifest>

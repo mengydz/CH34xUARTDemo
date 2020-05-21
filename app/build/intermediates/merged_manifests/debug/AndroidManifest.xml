@@ -15,6 +15,7 @@
         android:debuggable="true"
         android:icon="@drawable/icon"
         android:label="蜻蜓科技"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="cn.wch.ch34xuartdriver.MainActivity"
