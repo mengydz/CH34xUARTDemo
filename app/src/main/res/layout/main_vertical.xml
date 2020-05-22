@@ -27,7 +27,7 @@
 
     <!-- Read byte -->
     <LinearLayout
-        android:id="@+id/base_data_page"
+        android:id="@+id/main_page"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
@@ -57,6 +57,7 @@
             android:id="@+id/serial_num"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -87,6 +88,7 @@
             android:id="@+id/工作状态"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -117,6 +119,7 @@
             android:id="@+id/电压"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -147,6 +150,7 @@
             android:id="@+id/发电电流"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -177,6 +181,7 @@
             android:id="@+id/发电功率"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -207,6 +212,7 @@
             android:id="@+id/用电功率"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -237,6 +243,7 @@
             android:id="@+id/发电能量"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -267,6 +274,7 @@
             android:id="@+id/工作时间"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -297,6 +305,7 @@
             android:id="@+id/总工作时间"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -327,6 +336,7 @@
             android:id="@+id/剩余保养时间"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -357,6 +367,7 @@
             android:id="@+id/缸头温度"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -387,6 +398,7 @@
             android:id="@+id/发电机温度"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -416,6 +428,7 @@
             android:id="@+id/转速"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:textColor="#ffffff"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@null"
@@ -424,7 +437,8 @@
     </LinearLayout>
     </LinearLayout>
     <include layout="@layout/pro_vertical"></include>
-
+    <include layout="@layout/setting_page"></include>
+    <include layout="@layout/update_page"></include>
     <!-- Write byte -->
 
     <LinearLayout

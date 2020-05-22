@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:id="@+id/advanced_page"
+    android:id="@+id/setting_page"
     android:layout_weight="1"
     android:visibility="gone"
     android:layout_height="match_parent">
@@ -58,7 +58,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="运行次数："
+                android:text="工作电压："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
@@ -66,7 +66,7 @@
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/运行次数"
+                android:id="@+id/工作电压"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
@@ -88,7 +88,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="第一次运行LOG："
+                android:text="响应电流："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
@@ -96,7 +96,7 @@
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/第一次运行LOG"
+                android:id="@+id/响应电流"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
@@ -118,7 +118,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="第二次运行LOG："
+                android:text="油门低位PWM："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
@@ -126,7 +126,7 @@
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/第二次运行LOG"
+                android:id="@+id/油门低位PWM"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
@@ -148,7 +148,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="第三次运行LOG："
+                android:text="油门高位PWM："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
@@ -156,7 +156,7 @@
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/第三次运行LOG"
+                android:id="@+id/油门高位PWM"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
@@ -178,7 +178,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="第四次运行LOG："
+                android:text="舵机正反："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
@@ -186,7 +186,7 @@
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/第四次运行LOG"
+                android:id="@+id/舵机正反"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
@@ -208,7 +208,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="第五次运行LOG："
+                android:text="缸头报警温度："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
@@ -216,7 +216,7 @@
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/第五次运行LOG"
+                android:id="@+id/缸头报警温度"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
@@ -238,7 +238,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="第六次运行LOG："
+                android:text="发电机报警温度："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
@@ -246,7 +246,7 @@
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/第六次运行LOG"
+                android:id="@+id/发电机报警温度"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
@@ -268,7 +268,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="第七次运行LOG："
+                android:text="保养周期："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
@@ -276,7 +276,7 @@
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/第七次运行LOG"
+                android:id="@+id/保养周期"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
@@ -298,7 +298,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="第八次运行LOG："
+                android:text="剩余保养时间："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
@@ -306,7 +306,7 @@
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/第八次运行LOG"
+                android:id="@+id/剩余保养时间"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
@@ -328,82 +328,26 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="第九次运行LOG："
+                android:text="读取"
+                android:gravity="center"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
                 android:minWidth="150dp"
                 android:layout_gravity="center"/>
-
-            <EditText
-                android:id="@+id/第九次运行LOG"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
-                android:gravity="center" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="35dp"
-            android:layout_margin="1.5dip"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="#202020"
-            android:tag="Read block">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="第十次运行LOG："
+                android:text="写入"
+                android:gravity="center"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
                 android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
-            <EditText
-                android:id="@+id/第十次运行LOG"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
-                android:gravity="center" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="35dp"
-            android:layout_margin="1.5dip"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="#202020"
-            android:tag="Read block">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="第十一次运行LOG："
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp"
-                android:minWidth="150dp"
-                android:layout_gravity="center"/>
-
-            <EditText
-                android:id="@+id/第十一次运行LOG"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
-                android:gravity="center" />
-        </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>

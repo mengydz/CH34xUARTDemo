@@ -50,9 +50,10 @@ public class MainActivity extends Activity {
     private EditText readText;
     private EditText writeText;
     private boolean isOpen;
-    private Handler handler;
-    private LinearLayout linerBaseData;
-    private LinearLayout linerProData;
+    private LinearLayout linerMainPage;
+    private LinearLayout linerAdvancedPage;
+    private LinearLayout linerSettingPage;
+    private LinearLayout linerUpdatePage;
     private TextView tvBaseData;
     private TextView tvProData;
     private TextView tvSetData;
@@ -207,16 +208,20 @@ public class MainActivity extends Activity {
         tvBaseData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                linerProData.setVisibility(View.GONE);
-                linerBaseData.setVisibility(View.VISIBLE);
+                linerAdvancedPage.setVisibility(View.GONE);
+                linerSettingPage.setVisibility(View.GONE);
+                linerUpdatePage.setVisibility(View.GONE);
+                linerMainPage.setVisibility(View.VISIBLE);
             }
         });
 
         tvProData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                linerBaseData.setVisibility(View.GONE);
-                linerProData.setVisibility(View.VISIBLE);
+                linerMainPage.setVisibility(View.GONE);
+                linerSettingPage.setVisibility(View.GONE);
+                linerUpdatePage.setVisibility(View.GONE);
+                linerAdvancedPage.setVisibility(View.VISIBLE);
 
             }
         });
@@ -224,24 +229,22 @@ public class MainActivity extends Activity {
         tvSetData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                linerBaseData.setVisibility(View.GONE);
+                linerMainPage.setVisibility(View.GONE);
+                linerAdvancedPage.setVisibility(View.GONE);
+                linerUpdatePage.setVisibility(View.GONE);
+                linerSettingPage.setVisibility(View.VISIBLE);
             }
         });
 
         tvUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                linerBaseData.setVisibility(View.GONE);
+                linerMainPage.setVisibility(View.GONE);
+                linerAdvancedPage.setVisibility(View.GONE);
+                linerSettingPage.setVisibility(View.GONE);
+                linerUpdatePage.setVisibility(View.VISIBLE);
             }
         });
-
-        handler = new Handler() {
-
-            public void handleMessage(Message msg) {
-                //readText.setText((String) msg.obj);
-                readText.append((String) msg.obj);
-            }
-        };
 
     }
 
@@ -265,8 +268,11 @@ public class MainActivity extends Activity {
         writeText = (EditText) findViewById(R.id.WriteValues);
         writeButton = (Button) findViewById(R.id.WriteButton);
 
-        linerBaseData = (LinearLayout) findViewById(R.id.base_data_page);
-        linerProData = (LinearLayout) findViewById(R.id.pro_data_page);
+        linerMainPage = (LinearLayout) findViewById(R.id.main_page);
+        linerAdvancedPage = (LinearLayout) findViewById(R.id.advanced_page);
+        linerSettingPage = (LinearLayout) findViewById(R.id.setting_page);
+        linerUpdatePage = (LinearLayout) findViewById(R.id.update_page);
+
         tvBaseData = (TextView)findViewById(R.id.tv_base_data);
         tvProData = (TextView)findViewById(R.id.tv_pro_data);
         tvSetData = (TextView)findViewById(R.id.tv_set_data);
@@ -288,15 +294,40 @@ public class MainActivity extends Activity {
                 }
                 int length = MyApp.driver.ReadData(buffer, 64);
                 if (length > 0) {
-                        String recv = toHexString(buffer, length);
-                        msg.obj = recv;
-                    handler.sendMessage(msg);
+                    switch(buffer[0])
+                    {
+                        case 0:{
+                            readText.setText("hello world");
+                        }break;
+                        case 1:{
+                            int _value = buffer[1]*256 + buffer[2];
+                            readText.setText(String.valueOf(_value));
+                        }break;
+                        default:break;
+
+                    }
 
                 }
             }
         }
     }
 
+    private String toIntString(byte[] arg, int length) {//BytetoString
+        String result = new String();
+        if (arg != null) {
+            for (int i = 0; i < length; i++) {
+                result = result
+                        + (Integer.toHexString(
+                        arg[i] < 0 ? arg[i] + 256 : arg[i]).length() == 1 ? "0"
+                        + Integer.toHexString(arg[i] < 0 ? arg[i] + 256
+                        : arg[i])
+                        : Integer.toHexString(arg[i] < 0 ? arg[i] + 256
+                        : arg[i])) + " ";
+            }
+            return result;
+        }
+        return "";
+    }
     /**
      * 将byte[]数组转化为String类型
      *
