@@ -50,7 +50,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -80,7 +80,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -89,7 +89,7 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="#0877A6"
+            android:background="@null"
             android:focusableInTouchMode="false"
             android:gravity="center" />
     </LinearLayout>
@@ -110,7 +110,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -119,7 +119,7 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="#0877A6"
+            android:background="@null"
             android:focusableInTouchMode="false"
             android:gravity="center" />
     </LinearLayout>
@@ -140,7 +140,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -149,7 +149,7 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="#0877A6"
+            android:background="@null"
             android:focusableInTouchMode="false"
             android:gravity="center" />
     </LinearLayout>
@@ -170,7 +170,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -179,7 +179,7 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="#0877A6"
+            android:background="@null"
             android:focusableInTouchMode="false"
             android:gravity="center" />
     </LinearLayout>
@@ -200,7 +200,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -209,7 +209,7 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="#0877A6"
+            android:background="@null"
             android:focusableInTouchMode="false"
             android:gravity="center" />
     </LinearLayout>
@@ -230,7 +230,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -239,7 +239,7 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="#0877A6"
+            android:background="@null"
             android:focusableInTouchMode="false"
             android:gravity="center" />
     </LinearLayout>
@@ -260,7 +260,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -269,7 +269,7 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="#0877A6"
+            android:background="@null"
             android:focusableInTouchMode="false"
             android:gravity="center" />
     </LinearLayout>
@@ -290,7 +290,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -299,7 +299,7 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="#0877A6"
+            android:background="@null"
             android:focusableInTouchMode="false"
             android:gravity="center" />
     </LinearLayout>
@@ -320,7 +320,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -329,7 +329,7 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="#0877A6"
+            android:background="@null"
             android:focusableInTouchMode="false"
             android:gravity="center" />
     </LinearLayout>
@@ -350,7 +350,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -359,7 +359,7 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="#0877A6"
+            android:background="@null"
             android:focusableInTouchMode="false"
             android:gravity="center" />
     </LinearLayout>
@@ -380,7 +380,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -389,7 +389,7 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="#0877A6"
+            android:background="@null"
             android:focusableInTouchMode="false"
             android:gravity="center" />
     </LinearLayout>
@@ -409,7 +409,7 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginLeft="10dp"
-            android:minWidth="100dp"
+            android:minWidth="150dp"
             android:layout_gravity="center"/>
 
         <EditText
@@ -418,12 +418,13 @@
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="#0877A6"
+            android:background="@null"
             android:focusableInTouchMode="false"
             android:gravity="center" />
     </LinearLayout>
     </LinearLayout>
     <include layout="@layout/pro_vertical"></include>
+
     <!-- Write byte -->
 
     <LinearLayout

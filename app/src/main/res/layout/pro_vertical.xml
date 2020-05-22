@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:id="@+id/pro_data_page"
     android:layout_weight="1"
-    android:visibility="gone"
+
     android:layout_height="match_parent">
     <!-- Read byte -->
     <LinearLayout
@@ -27,15 +27,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="设备号2："
+                android:text="设备号："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/serial_num2"
+                android:id="@+id/设备号2"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
@@ -57,20 +57,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="工作状态2："
+                android:text="运行次数："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/工作状态"
+                android:id="@+id/运行次数"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="#0877A6"
+                android:background="@null"
                 android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -87,20 +87,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="电压2："
+                android:text="第一次运行LOG："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/电压"
+                android:id="@+id/第一次运行LOG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="#0877A6"
+                android:background="@null"
                 android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -117,20 +117,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="发电电流："
+                android:text="第二次运行LOG："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/发电电流"
+                android:id="@+id/第二次运行LOG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="#0877A6"
+                android:background="@null"
                 android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -147,20 +147,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="发电功率："
+                android:text="第三次运行LOG："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/发电功率"
+                android:id="@+id/第三次运行LOG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="#0877A6"
+                android:background="@null"
                 android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -177,20 +177,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="用电功率："
+                android:text="第四次运行LOG："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/用电功率"
+                android:id="@+id/第四次运行LOG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="#0877A6"
+                android:background="@null"
                 android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -207,20 +207,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="发电能量："
+                android:text="第五次运行LOG："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/发电能量"
+                android:id="@+id/第五次运行LOG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="#0877A6"
+                android:background="@null"
                 android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -237,20 +237,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="工作时间："
+                android:text="第六次运行LOG："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/工作时间"
+                android:id="@+id/第六次运行LOG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="#0877A6"
+                android:background="@null"
                 android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -267,20 +267,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="总工作时间："
+                android:text="第七次运行LOG："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/总工作时间"
+                android:id="@+id/第七次运行LOG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="#0877A6"
+                android:background="@null"
                 android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -297,20 +297,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="剩余保养时间："
+                android:text="第八次运行LOG："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/剩余保养时间"
+                android:id="@+id/第八次运行LOG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="#0877A6"
+                android:background="@null"
                 android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -327,20 +327,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="缸头温度："
+                android:text="第九次运行LOG："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/缸头温度"
+                android:id="@+id/第九次运行LOG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="#0877A6"
+                android:background="@null"
                 android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -357,20 +357,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="发电机温度："
+                android:text="第十次运行LOG："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/发电机温度"
+                android:id="@+id/第十次运行LOG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="#0877A6"
+                android:background="@null"
                 android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
@@ -386,20 +386,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="转速："
+                android:text="第十一次运行LOG："
                 android:textColor="#ffffff"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
-                android:minWidth="100dp"
+                android:minWidth="150dp"
                 android:layout_gravity="center"/>
 
             <EditText
-                android:id="@+id/转速"
+                android:id="@+id/第十一次运行LOG"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="#0877A6"
+                android:background="@null"
                 android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
