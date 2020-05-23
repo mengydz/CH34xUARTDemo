@@ -4,27 +4,6 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
 
-    <!-- Settings -->
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="42dp"
-        android:layout_margin="1.5dip"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="#202020"
-        android:tag="configure block">
-
-        <Button
-            android:id="@+id/open_device"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:background="@drawable/button_pattern"
-            android:text="@string/open" />
-
-    </LinearLayout>
-
     <!-- Read byte -->
     <LinearLayout
         android:id="@+id/main_page"
@@ -58,11 +37,11 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
-            android:gravity="center" />
+            android:gravity="center"/>
     </LinearLayout>
 
     <LinearLayout
@@ -89,7 +68,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
@@ -120,7 +99,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
@@ -151,7 +130,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
@@ -182,7 +161,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
@@ -213,7 +192,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
@@ -244,7 +223,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
@@ -275,7 +254,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
@@ -306,7 +285,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
@@ -337,7 +316,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
@@ -368,7 +347,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
@@ -399,7 +378,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
@@ -429,7 +408,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:textColor="#ffffff"
-            android:layout_margin="10dp"
+            android:layout_margin="6dp"
             android:layout_weight="1"
             android:background="@null"
             android:focusableInTouchMode="false"
@@ -440,56 +419,6 @@
     <include layout="@layout/setting_page"></include>
     <include layout="@layout/update_page"></include>
     <!-- Write byte -->
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="35dp"
-        android:layout_margin="3dip"
-        android:background="#202020"
-        android:tag="Write block">
-
-        <TextView
-            android:id="@+id/WriteBytes"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="3"
-            android:gravity="center"
-            android:text="@string/write_bytes"
-            android:textColor="#ffffff"
-            android:textStyle="bold" />
-
-
-        <EditText
-            android:id="@+id/WriteValues"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:background="#0877A6"
-            android:gravity="left|center"
-            android:hint="@string/hint"
-            android:maxLength="255" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="3">
-
-            <Button
-                android:id="@+id/WriteButton"
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:background="@drawable/button_pattern"
-                android:gravity="center"
-                android:scaleType="centerInside"
-                android:text="@string/write"
-                android:textSize="10dp" />
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -47,8 +47,21 @@ public class MainActivity extends Activity {
 
     public readThread handlerThread;
     protected final Object ThreadLock = new Object();
-    private EditText readText;
-    private EditText writeText;
+    private EditText serialNumText;
+    private EditText workStatusText;
+    private EditText voltageText;
+    private EditText generateCurrentText;
+    private EditText loadCurrentText;
+    private EditText generatePowerText;
+    private EditText loadPowerText;
+    private EditText generateEnergyText;
+    private EditText singleWorkTimeText;
+    private EditText totalWorkTimeText;
+    private EditText upkeppTimeText;//剩余保养时间
+    private EditText cylinderTemperatureText;//缸头温度
+    private EditText motorTemperatureText;
+    private EditText speedText;
+
     private boolean isOpen;
     private LinearLayout linerMainPage;
     private LinearLayout linerAdvancedPage;
@@ -58,12 +71,11 @@ public class MainActivity extends Activity {
     private TextView tvProData;
     private TextView tvSetData;
     private TextView tvUpdate;
+
+    private TextView tvSaveWrite;
     private int retval;
     private MainActivity activity;
 
-    private Button writeButton, openButton, clearButton;
-
-    public byte[] writeBuffer;
     public byte[] readBuffer;
     public int actualNumBytes;
 
@@ -104,106 +116,9 @@ public class MainActivity extends Activity {
             dialog.show();
         }
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);// 保持常亮的屏幕的状态
-        writeBuffer = new byte[512];
         readBuffer = new byte[512];
         isOpen = false;
-        writeButton.setEnabled(false);
         activity = this;
-
-        //打开流程主要步骤为ResumeUsbList，UartInit
-        openButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                int _baudrate = 115200;
-                byte _datebit = 8;
-                byte _stopbit = 1;
-                byte _parity = 0;
-                byte _flowcontrol = 0;
-
-                if (!isOpen) {
-                    retval = MyApp.driver.ResumeUsbList();
-                    if (retval == -1)// ResumeUsbList方法用于枚举CH34X设备以及打开相关设备
-                    {
-                        Toast.makeText(MainActivity.this, "打开设备失败!",
-                                Toast.LENGTH_SHORT).show();
-                        MyApp.driver.CloseDevice();
-                    } else if (retval == 0) {
-                        if (!MyApp.driver.UartInit()) {//对串口设备进行初始化操作
-                            Toast.makeText(MainActivity.this, "设备初始化失败!",
-                                    Toast.LENGTH_SHORT).show();
-                            Toast.makeText(MainActivity.this, "打开" +
-                                            "设备失败!",
-                                    Toast.LENGTH_SHORT).show();
-                            return;
-                        }
-                        Toast.makeText(MainActivity.this, "打开设备成功!",
-                                Toast.LENGTH_SHORT).show();
-                        /******配置串口*********************************************************/
-                        if (MyApp.driver.SetConfig(_baudrate, _datebit, _stopbit, _parity, _flowcontrol)) {//配置串口波特率，函数说明可参照编程手册
-                            Toast.makeText(MainActivity.this, "串口设置成功!",
-                                    Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(MainActivity.this, "串口设置失败!",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                        isOpen = true;
-                        openButton.setText("Close");
-                        writeButton.setEnabled(true);
-                        new readThread().start();//开启读线程读取串口接收的数据
-                    } else {
-
-                        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-                        builder.setIcon(R.drawable.icon);
-                        builder.setTitle("未授权限");
-                        builder.setMessage("确认退出吗？");
-                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // TODO Auto-generated method stub
-//								MainFragmentActivity.this.finish();
-                                System.exit(0);
-                            }
-                        });
-                        builder.setNegativeButton("返回", new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // TODO Auto-generated method stub
-
-                            }
-                        });
-                        builder.show();
-
-                    }
-                } else {
-                    openButton.setText("Open");
-                    writeButton.setEnabled(false);
-                    isOpen = false;
-                    try {
-                        Thread.sleep(200);
-                    } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-                    MyApp.driver.CloseDevice();
-                }
-            }
-        });
-
-        writeButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                    byte[] to_send = {0x31,0x32,0x33};//toByteArray(writeText.getText().toString());
-                    int retval = MyApp.driver.WriteData(to_send, to_send.length);//写数据，第一个参数为需要发送的字节数组，第二个参数为需要发送的字节长度，返回实际发送的字节长度
-                    if (retval < 0)
-                        Toast.makeText(MainActivity.this, "写失败!",
-                                Toast.LENGTH_SHORT).show();
-            }
-        });
 
         tvBaseData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -246,6 +161,17 @@ public class MainActivity extends Activity {
             }
         });
 
+        tvSaveWrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                byte[] to_send = {0x31,0x32,0x33};//toByteArray(writeText.getText().toString());
+                int retval = MyApp.driver.WriteData(to_send, to_send.length);//写数据，第一个参数为需要发送的字节数组，第二个参数为需要发送的字节长度，返回实际发送的字节长度
+                if (retval < 0)
+                    Toast.makeText(MainActivity.this, "写失败!",
+                            Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     public void onResume() {
@@ -253,7 +179,76 @@ public class MainActivity extends Activity {
         if (!MyApp.driver.isConnected()) {
             int retval = MyApp.driver.ResumeUsbPermission();
             if (retval == 0) {
+                int _baudrate = 115200;
+                byte _datebit = 8;
+                byte _stopbit = 1;
+                byte _parity = 0;
+                byte _flowcontrol = 0;
 
+                if (!isOpen) {
+                    retval = MyApp.driver.ResumeUsbList();
+                    if (retval == -1)// ResumeUsbList方法用于枚举CH34X设备以及打开相关设备
+                    {
+                        Toast.makeText(MainActivity.this, "打开设备失败!",
+                                Toast.LENGTH_SHORT).show();
+                        MyApp.driver.CloseDevice();
+                    } else if (retval == 0) {
+                        if (!MyApp.driver.UartInit()) {//对串口设备进行初始化操作
+                            Toast.makeText(MainActivity.this, "设备初始化失败!",
+                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "打开" +
+                                            "设备失败!",
+                                    Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        Toast.makeText(MainActivity.this, "打开设备成功!",
+                                Toast.LENGTH_SHORT).show();
+                        /******配置串口*********************************************************/
+                        if (MyApp.driver.SetConfig(_baudrate, _datebit, _stopbit, _parity, _flowcontrol)) {//配置串口波特率，函数说明可参照编程手册
+                            Toast.makeText(MainActivity.this, "串口设置成功!",
+                                    Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, "串口设置失败!",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        isOpen = true;
+                        new readThread().start();//开启读线程读取串口接收的数据
+                    } else {
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+                        builder.setIcon(R.drawable.icon);
+                        builder.setTitle("未授权限");
+                        builder.setMessage("确认退出吗？");
+                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // TODO Auto-generated method stub
+//								MainFragmentActivity.this.finish();
+                                System.exit(0);
+                            }
+                        });
+                        builder.setNegativeButton("返回", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // TODO Auto-generated method stub
+
+                            }
+                        });
+                        builder.show();
+
+                    }
+                } else {
+                    isOpen = false;
+                    try {
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                    MyApp.driver.CloseDevice();
+                }
             } else if (retval == -2) {
                 Toast.makeText(MainActivity.this, "获取权限失败!",
                         Toast.LENGTH_SHORT).show();
@@ -263,10 +258,19 @@ public class MainActivity extends Activity {
 
     //处理界面
     private void initUI() {
-        openButton = (Button) findViewById(R.id.open_device);
-        readText = (EditText) findViewById(R.id.serial_num);
-        writeText = (EditText) findViewById(R.id.WriteValues);
-        writeButton = (Button) findViewById(R.id.WriteButton);
+        serialNumText = (EditText) findViewById(R.id.serial_num);
+        workStatusText = (EditText) findViewById(R.id.工作状态);
+        voltageText = (EditText) findViewById(R.id.电压);
+        generateCurrentText = (EditText) findViewById(R.id.发电电流);
+        loadCurrentText = (EditText) findViewById(R.id.发电功率);
+        loadPowerText = (EditText) findViewById(R.id.用电功率);
+        generateEnergyText = (EditText) findViewById(R.id.发电能量);
+        singleWorkTimeText = (EditText) findViewById(R.id.工作时间);
+        totalWorkTimeText = (EditText) findViewById(R.id.总工作时间);
+        upkeppTimeText = (EditText) findViewById(R.id.剩余保养时间);
+        cylinderTemperatureText = (EditText) findViewById(R.id.缸头温度);
+        motorTemperatureText = (EditText) findViewById(R.id.发电机温度);
+        speedText = (EditText) findViewById(R.id.转速);
 
         linerMainPage = (LinearLayout) findViewById(R.id.main_page);
         linerAdvancedPage = (LinearLayout) findViewById(R.id.advanced_page);
@@ -277,6 +281,8 @@ public class MainActivity extends Activity {
         tvProData = (TextView)findViewById(R.id.tv_pro_data);
         tvSetData = (TextView)findViewById(R.id.tv_set_data);
         tvUpdate = (TextView)findViewById(R.id.tv_update_data);
+
+        tvSaveWrite = (TextView)findViewById(R.id.写入);
         return;
     }
 
@@ -294,22 +300,75 @@ public class MainActivity extends Activity {
                 }
                 int length = MyApp.driver.ReadData(buffer, 64);
                 if (length > 0) {
-                    switch(buffer[0])
-                    {
-                        case 0:{
-                            readText.setText("hello world");
-                        }break;
-                        case 1:{
-                            int _value = buffer[1]*256 + buffer[2];
-                            readText.setText(String.valueOf(_value));
-                        }break;
-                        default:break;
+                    //workStatusText.setText(toHexString(buffer, 5));
+//                    if(buffer[0] == 0x88 && buffer[1] == 0xA1) {
+                            switch (buffer[3]) {
+                                case 0x01: {
+                                    short _signed_value;
+                                    byte[] _buffer = new byte[2];
+                                    serialNumText.setText("P3500-006A");
 
-                    }
+                                    _buffer[0] = buffer[4];
+                                    _buffer[1] = buffer[5];  //电压
+                                    _signed_value = byte2short(_buffer);
+                                    voltageText.setText(String.valueOf(_signed_value));
+                                    _buffer[0] = buffer[6];
+                                    _buffer[1] = buffer[7];  //发电电流
+                                    _signed_value = byte2short(_buffer);
+                                    generateCurrentText.setText(String.valueOf(_signed_value));
+                                    _buffer[0] = buffer[8];
+                                    _buffer[1] = buffer[9];  //舵机
+                                    _signed_value = byte2short(_buffer);
+                                    loadCurrentText.setText(String.valueOf(_signed_value));
+                                    _buffer[0] = buffer[10];
+                                    _buffer[1] = buffer[11];    //转速
+                                    _signed_value = byte2short(_buffer);
+                                    speedText.setText(String.valueOf(_signed_value));
+                                    _buffer[0] = buffer[12];
+                                    _buffer[1] = buffer[13];    //缸头温度
+                                    _signed_value = byte2short(_buffer);
+                                    cylinderTemperatureText.setText(String.valueOf(_signed_value));
+                                    _buffer[0] = buffer[14];
+                                    _buffer[1] = buffer[15];    //发电机温度
+                                    _signed_value = byte2short(_buffer);
+                                    motorTemperatureText.setText(String.valueOf(_signed_value));
+                                    _buffer[0] = buffer[14];
+                                    _buffer[1] = buffer[15];    //用电电流
+                                    _signed_value = byte2short(_buffer);
+                                    loadPowerText.setText(String.valueOf(_signed_value));
 
+                                }
+                                break;
+                                case 0x02: {
+
+                                }
+                                break;
+                                default:
+                                    break;
+
+                            }
+//                    }
                 }
             }
         }
+    }
+
+    public static byte[] short2byte(short s){
+        byte[] b = new byte[2];
+        for(int i = 0; i < 2; i++){
+            int offset = 16 - (i+1)*8; //因为byte占4个字节，所以要计算偏移量
+            b[i] = (byte)((s >> offset)&0xff); //把16位分为2个8位进行分别存储
+        }
+        return b;
+    }
+
+    public static short byte2short(byte[] b){
+        short l = 0;
+        for (int i = 0; i < 2; i++) {
+            l<<=8; //<<=和我们的 +=是一样的，意思就是 l = l << 8
+            l |= (b[i] & 0xff); //和上面也是一样的  l = l | (b[i]&0xff)
+        }
+        return l;
     }
 
     private String toIntString(byte[] arg, int length) {//BytetoString
