@@ -93,11 +93,38 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_vertical);
+        setContentView(R.layout.main_vertical);//fragment_main
+
+        serialNumText = (EditText) findViewById(R.id.serial_num);
+        workStatusText = (EditText) findViewById(R.id.工作状态);
+        voltageText = (EditText) findViewById(R.id.电压);
+        generateCurrentText = (EditText) findViewById(R.id.发电电流);
+        loadCurrentText = (EditText) findViewById(R.id.发电功率);
+        loadPowerText = (EditText) findViewById(R.id.用电功率);
+        generateEnergyText = (EditText) findViewById(R.id.发电能量);
+        singleWorkTimeText = (EditText) findViewById(R.id.工作时间);
+        totalWorkTimeText = (EditText) findViewById(R.id.总工作时间);
+        upkeppTimeText = (EditText) findViewById(R.id.剩余保养时间);
+        cylinderTemperatureText = (EditText) findViewById(R.id.缸头温度);
+        motorTemperatureText = (EditText) findViewById(R.id.发电机温度);
+        speedText = (EditText) findViewById(R.id.转速);
+
+        linerMainPage = (LinearLayout) findViewById(R.id.main_page);
+        linerAdvancedPage = (LinearLayout) findViewById(R.id.advanced_page);
+        linerSettingPage = (LinearLayout) findViewById(R.id.setting_page);
+        linerUpdatePage = (LinearLayout) findViewById(R.id.update_page);
+
+        tvBaseData = (TextView)findViewById(R.id.tv_base_data);
+        tvProData = (TextView)findViewById(R.id.tv_pro_data);
+        tvSetData = (TextView)findViewById(R.id.tv_set_data);
+        tvUpdate = (TextView)findViewById(R.id.tv_update_data);
+
+        tvSaveWrite = (TextView)findViewById(R.id.写入);
+
         MyApp.driver = new CH34xUARTDriver(
                 (UsbManager) getSystemService(Context.USB_SERVICE), this,
                 ACTION_USB_PERMISSION);
-        initUI();
+
         if (!MyApp.driver.UsbFeatureSupported())// 判断系统是否支持USB HOST
         {
             Dialog dialog = new AlertDialog.Builder(MainActivity.this)
@@ -256,41 +283,14 @@ public class MainActivity extends Activity {
         }
     }
 
-    //处理界面
-    private void initUI() {
-        serialNumText = (EditText) findViewById(R.id.serial_num);
-        workStatusText = (EditText) findViewById(R.id.工作状态);
-        voltageText = (EditText) findViewById(R.id.电压);
-        generateCurrentText = (EditText) findViewById(R.id.发电电流);
-        loadCurrentText = (EditText) findViewById(R.id.发电功率);
-        loadPowerText = (EditText) findViewById(R.id.用电功率);
-        generateEnergyText = (EditText) findViewById(R.id.发电能量);
-        singleWorkTimeText = (EditText) findViewById(R.id.工作时间);
-        totalWorkTimeText = (EditText) findViewById(R.id.总工作时间);
-        upkeppTimeText = (EditText) findViewById(R.id.剩余保养时间);
-        cylinderTemperatureText = (EditText) findViewById(R.id.缸头温度);
-        motorTemperatureText = (EditText) findViewById(R.id.发电机温度);
-        speedText = (EditText) findViewById(R.id.转速);
-
-        linerMainPage = (LinearLayout) findViewById(R.id.main_page);
-        linerAdvancedPage = (LinearLayout) findViewById(R.id.advanced_page);
-        linerSettingPage = (LinearLayout) findViewById(R.id.setting_page);
-        linerUpdatePage = (LinearLayout) findViewById(R.id.update_page);
-
-        tvBaseData = (TextView)findViewById(R.id.tv_base_data);
-        tvProData = (TextView)findViewById(R.id.tv_pro_data);
-        tvSetData = (TextView)findViewById(R.id.tv_set_data);
-        tvUpdate = (TextView)findViewById(R.id.tv_update_data);
-
-        tvSaveWrite = (TextView)findViewById(R.id.写入);
-        return;
-    }
-
     private class readThread extends Thread {
 
         public void run() {
 
-            byte[] buffer = new byte[64];
+            byte[] buffer = new byte[128];
+            short _signed_value;
+            float _float_value;
+            byte[] _buffer = new byte[2];
 
             while (true) {
 
@@ -304,14 +304,13 @@ public class MainActivity extends Activity {
 //                    if(buffer[0] == 0x88 && buffer[1] == 0xA1) {
                             switch (buffer[3]) {
                                 case 0x01: {
-                                    short _signed_value;
-                                    byte[] _buffer = new byte[2];
                                     serialNumText.setText("P3500-006A");
 
                                     _buffer[0] = buffer[4];
                                     _buffer[1] = buffer[5];  //电压
                                     _signed_value = byte2short(_buffer);
-                                    voltageText.setText(String.valueOf(_signed_value));
+                                    _float_value = _signed_value/10.0f;
+                                    voltageText.setText(String.valueOf(_float_value));
                                     _buffer[0] = buffer[6];
                                     _buffer[1] = buffer[7];  //发电电流
                                     _signed_value = byte2short(_buffer);
@@ -332,8 +331,8 @@ public class MainActivity extends Activity {
                                     _buffer[1] = buffer[15];    //发电机温度
                                     _signed_value = byte2short(_buffer);
                                     motorTemperatureText.setText(String.valueOf(_signed_value));
-                                    _buffer[0] = buffer[14];
-                                    _buffer[1] = buffer[15];    //用电电流
+                                    _buffer[0] = buffer[16];
+                                    _buffer[1] = buffer[17];    //用电电流
                                     _signed_value = byte2short(_buffer);
                                     loadPowerText.setText(String.valueOf(_signed_value));
 
