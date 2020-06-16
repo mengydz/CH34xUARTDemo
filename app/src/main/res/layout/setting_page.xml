@@ -39,10 +39,10 @@
                 android:id="@+id/设备号2"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
                 android:gravity="center" />
         </LinearLayout>
 
@@ -69,10 +69,10 @@
                 android:id="@+id/工作电压"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
                 android:gravity="center" />
         </LinearLayout>
 
@@ -99,10 +99,10 @@
                 android:id="@+id/响应电流"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
                 android:gravity="center" />
         </LinearLayout>
 
@@ -129,10 +129,10 @@
                 android:id="@+id/油门低位PWM"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
                 android:gravity="center" />
         </LinearLayout>
 
@@ -159,10 +159,10 @@
                 android:id="@+id/油门高位PWM"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
                 android:gravity="center" />
         </LinearLayout>
 
@@ -189,10 +189,10 @@
                 android:id="@+id/舵机正反"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
                 android:gravity="center" />
         </LinearLayout>
 
@@ -219,10 +219,10 @@
                 android:id="@+id/缸头报警温度"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
                 android:gravity="center" />
         </LinearLayout>
 
@@ -249,10 +249,10 @@
                 android:id="@+id/发电机报警温度"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
                 android:gravity="center" />
         </LinearLayout>
 
@@ -279,10 +279,10 @@
                 android:id="@+id/保养周期"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
                 android:gravity="center" />
         </LinearLayout>
 
@@ -309,10 +309,10 @@
                 android:id="@+id/剩余保养时间"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
+                android:layout_margin="6dp"
                 android:layout_weight="1"
-                android:background="@null"
-                android:focusableInTouchMode="false"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
                 android:gravity="center" />
         </LinearLayout>
 

@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: __local_aars__:C./Users/cmy/Desktop/CH34xUARTDemo/app/libs/CH34xUARTDriver.jar:unspecified@jar">
+  <library name="Gradle: ./app/libs/CH34xUARTDriver.jar">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/app/libs/CH34xUARTDriver.jar!/" />
     </CLASSES>
