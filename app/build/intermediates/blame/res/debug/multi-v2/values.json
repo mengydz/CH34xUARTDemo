@@ -1,0 +1,64 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "21,42,57,49,37,4,3,6,7,18,13,9,11,5,19,17,20,10,14,8,16,15",
+                        "startColumns": "4,1,1,1,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "908,1429,1756,1581,1313,101,59,209,257,782,555,361,455,155,823,743,866,408,598,312,702,649",
+                        "endLines": "35,47,60,55,40,4,3,6,7,18,13,9,11,5,19,17,20,10,14,8,16,15",
+                        "endColumns": "16,16,16,16,16,52,40,46,51,39,41,45,37,52,41,37,40,45,49,45,39,51",
+                        "endOffsets": "1307,1575,1869,1750,1422,149,95,251,304,817,592,402,488,203,860,776,902,449,643,353,737,696"
+                    },
+                    "to": {
+                        "startLines": "2,17,23,27,34,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,445,591,706,872,1097,1150,1191,1238,1290,1330,1372,1418,1456,1509,1551,1589,1630,1676,1726,1772,1812",
+                        "endLines": "16,22,26,33,37,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56",
+                        "endColumns": "16,16,16,16,16,52,40,46,51,39,41,45,37,52,41,37,40,45,49,45,39,51",
+                        "endOffsets": "440,586,701,867,978,1145,1186,1233,1285,1325,1367,1413,1451,1504,1546,1584,1625,1671,1721,1767,1807,1859"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "92,151",
+                        "endColumns": "57,55",
+                        "endOffsets": "145,202"
+                    },
+                    "to": {
+                        "startLines": "38,39",
+                        "startColumns": "4,4",
+                        "startOffsets": "983,1041",
+                        "endColumns": "57,55",
+                        "endOffsets": "1036,1092"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\cmy\\Desktop\\CH34xUARTDemo\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "6,15",
+                        "startColumns": "4,4",
+                        "startOffsets": "192,525",
+                        "endLines": "12,17",
+                        "endColumns": "12,12",
+                        "endOffsets": "484,682"
+                    },
+                    "to": {
+                        "startLines": "57,64",
+                        "startColumns": "4,4",
+                        "startOffsets": "1864,2155",
+                        "endLines": "63,66",
+                        "endColumns": "12,12",
+                        "endOffsets": "2150,2310"
+                    }
+                }
+            ]
+        }
+    ]
+}

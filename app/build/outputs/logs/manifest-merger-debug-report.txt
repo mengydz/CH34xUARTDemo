@@ -1,0 +1,95 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:2:1-45:12
+	package
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:3:5-35
+		INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:4:5-29
+		INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml
+uses-feature#android.hardware.usb.host
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:6:2-59
+	android:name
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:6:16-56
+uses-sdk
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:7:5-47
+INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:7:5-47
+INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:7:5-47
+INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:7:5-47
+INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:7:5-47
+	android:targetSdkVersion
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:7:15-44
+		INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:7:5-47
+		INJECTED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml
+application
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:9:5-43:19
+	android:label
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:12:9-29
+	android:icon
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:11:9-38
+	android:allowBackup
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:13:9-40
+activity#cn.wch.ch34xuartdriver.MainActivity
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:14:9-39:20
+	android:screenOrientation
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:16:13-49
+	android:label
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:17:13-33
+	android:launchMode
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:19:13-44
+	android:configChanges
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:18:13-74
+	android:name
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:15:13-63
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:20:13-24:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:23:17-77
+	android:name
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:23:27-74
+intent-filter#action:name:android.hardware.usb.action.USB_DEVICE_ATTACHED
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:26:4-28:20
+action#android.hardware.usb.action.USB_DEVICE_ATTACHED
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:27:6-79
+	android:name
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:27:14-76
+intent-filter#action:name:android.media.action.IMAGE_CAPTURE+category:name:android.intent.category.DEFAULT
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:32:14-35:29
+action#android.media.action.IMAGE_CAPTURE
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:33:17-76
+	android:name
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:33:25-74
+category#android.intent.category.DEFAULT
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:34:17-75
+	android:name
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:34:27-73
+meta-data#android.hardware.usb.action.USB_DEVICE_ATTACHED
+ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:36:6-120
+	android:resource
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:36:80-117
+	android:name
+		ADDED from C:\Users\cmy\Desktop\CH34xUARTDemo\app\src\main\AndroidManifest.xml:36:17-79

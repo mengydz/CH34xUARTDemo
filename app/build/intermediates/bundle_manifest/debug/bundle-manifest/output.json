@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "applicationId": "cn.wch.ch34xuartdemo",
+  "variantType": "BASE_APK",
+  "elements": [
+    {
+      "outputType": {
+        "type": "BUNDLE_MANIFEST"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": 12,
+        "versionName": "1.2",
+        "outputFile": "app-debug.apk",
+        "fullName": "debug",
+        "baseName": "debug",
+        "dirName": ""
+      },
+      "path": "AndroidManifest.xml",
+      "properties": {
+        "packageId": "cn.wch.ch34xuartdemo",
+        "split": "",
+        "minSdkVersion": "12"
+      }
+    }
+  ]
+}

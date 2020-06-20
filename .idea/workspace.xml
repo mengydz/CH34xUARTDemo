@@ -10,37 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db50b1a0-e644-4a92-8a40-e3e81170274f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_cmy_Desktop_CH34xUARTDemo_app_libs_CH34xUARTDriver_jar_unspecified_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____app_libs_CH34xUARTDriver_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CH34xUARTDemo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CH34xUARTDemo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cn/wch/ch34xuartdriver/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cn/wch/ch34xuartdriver/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/setting_page.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/setting_page.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="TODUFM4LDAIZG6TO" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -172,6 +153,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="Gradle.BeforeRunTask" enabled="true" tasks="installDebug" externalProjectPath="$PROJECT_DIR$/app" vmOptions="" scriptParameters="" />
       </method>
     </configuration>
   </component>
@@ -229,5 +211,27 @@
     <MESSAGE value="更改了logo图片" />
     <MESSAGE value="把text背景去掉了" />
     <option name="LAST_COMMIT_MESSAGE" value="把text背景去掉了" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="387" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592669755803">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="387" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592669755803" />
+    <state width="923" height="119" key="GridCell.Tab.0.bottom" timestamp="1592670310990">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="923" height="119" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592670310990" />
+    <state width="923" height="119" key="GridCell.Tab.0.center" timestamp="1592670310989">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="923" height="119" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592670310989" />
+    <state width="923" height="119" key="GridCell.Tab.0.left" timestamp="1592670310989">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="923" height="119" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592670310989" />
+    <state width="923" height="119" key="GridCell.Tab.0.right" timestamp="1592670310990">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="923" height="119" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592670310990" />
   </component>
 </project>

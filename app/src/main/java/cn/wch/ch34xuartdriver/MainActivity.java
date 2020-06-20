@@ -62,6 +62,15 @@ public class MainActivity extends Activity {
     private EditText motorTemperatureText;
     private EditText speedText;
 
+    private EditText workVoltageText;
+    private EditText requestCurrText;
+    private EditText throLowPWMText;
+    private EditText throHighPWMText;
+    private EditText gangtouTempText;
+    private EditText eleMotorTempText;
+    private EditText teardownTimeText;
+    private EditText lastTeardownTimeText;
+
     private boolean isOpen;
     private LinearLayout linerMainPage;
     private LinearLayout linerAdvancedPage;
@@ -108,6 +117,15 @@ public class MainActivity extends Activity {
         cylinderTemperatureText = (EditText) findViewById(R.id.缸头温度);
         motorTemperatureText = (EditText) findViewById(R.id.发电机温度);
         speedText = (EditText) findViewById(R.id.转速);
+
+        workVoltageText = (EditText) findViewById(R.id.工作电压);
+        requestCurrText = (EditText) findViewById(R.id.响应电流);
+        throLowPWMText = (EditText) findViewById(R.id.油门低位PWM);
+        throHighPWMText = (EditText) findViewById(R.id.油门高位PWM);
+        gangtouTempText = (EditText) findViewById(R.id.缸头报警温度);
+        eleMotorTempText = (EditText) findViewById(R.id.发电机报警温度);
+        teardownTimeText = (EditText) findViewById(R.id.保养周期);
+        lastTeardownTimeText = (EditText) findViewById(R.id.剩余保养时间);
 
         linerMainPage = (LinearLayout) findViewById(R.id.main_page);
         linerAdvancedPage = (LinearLayout) findViewById(R.id.advanced_page);
@@ -191,7 +209,17 @@ public class MainActivity extends Activity {
         tvSaveWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                byte[] to_send = {0x31,0x32,0x33};//toByteArray(writeText.getText().toString());
+                byte[] to_send = {(byte) 0x8A, (byte) 0x8B, (byte) 0x1B, (byte) 0x02,
+                        (byte)0x00,(byte)0x01,(byte)0x02,(byte)0x03,(byte)0x04,(byte)0x05,(byte)0x06,(byte)0x07,(byte)0x08,(byte)0x09,
+                        (byte)0x10,(byte)0x11,(byte)0x12,(byte)0x13,(byte)0x14,(byte)0x15,(byte)0x16,(byte)0x17,(byte)0x18,(byte)0x19,
+                        (byte)0x20,(byte)0x21,(byte)0x22,(byte)0x23,(byte)0x24,(byte)0x25,(byte)0x26};//toByteArray(writeText.getText().toString());
+                float workVoltageFloat = Float.parseFloat(String.valueOf(workVoltageText.getText()));
+                to_send[14] = (byte)(workVoltageFloat*10/256);
+                to_send[15] = (byte)(workVoltageFloat*10-(int)(workVoltageFloat*10/256)*256);
+                float requestCurrFloat = Float.parseFloat(String.valueOf(requestCurrText.getText()));
+                to_send[16] = (byte)(requestCurrFloat*10/256);
+                to_send[17] = (byte)(requestCurrFloat*10-(int)(requestCurrFloat*10/256)*256);
+
                 int retval = MyApp.driver.WriteData(to_send, to_send.length);//写数据，第一个参数为需要发送的字节数组，第二个参数为需要发送的字节长度，返回实际发送的字节长度
                 if (retval < 0)
                     Toast.makeText(MainActivity.this, "写失败!",

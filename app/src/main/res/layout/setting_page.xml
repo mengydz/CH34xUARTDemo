@@ -37,12 +37,13 @@
 
             <EditText
                 android:id="@+id/设备号2"
+                android:text="P3500-006A"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="6dp"
                 android:layout_weight="1"
                 android:background="#aaaaaa"
-                android:focusableInTouchMode="true"
+                android:focusableInTouchMode="false"
                 android:gravity="center" />
         </LinearLayout>
 
@@ -67,6 +68,7 @@
 
             <EditText
                 android:id="@+id/工作电压"
+                android:text="48.0"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="6dp"
@@ -97,6 +99,7 @@
 
             <EditText
                 android:id="@+id/响应电流"
+                android:text="1.0"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="6dp"
@@ -127,6 +130,7 @@
 
             <EditText
                 android:id="@+id/油门低位PWM"
+                android:text="1100"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="6dp"
@@ -157,6 +161,7 @@
 
             <EditText
                 android:id="@+id/油门高位PWM"
+                android:text="1900"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="6dp"
@@ -187,6 +192,7 @@
 
             <EditText
                 android:id="@+id/舵机正反"
+                android:text="1"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="6dp"
@@ -217,6 +223,7 @@
 
             <EditText
                 android:id="@+id/缸头报警温度"
+                android:text="100"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="6dp"
@@ -247,6 +254,7 @@
 
             <EditText
                 android:id="@+id/发电机报警温度"
+                android:text="100"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="6dp"
@@ -277,6 +285,7 @@
 
             <EditText
                 android:id="@+id/保养周期"
+                android:text="52"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="6dp"
@@ -307,6 +316,7 @@
 
             <EditText
                 android:id="@+id/剩余保养时间"
+                android:text="52"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="6dp"
