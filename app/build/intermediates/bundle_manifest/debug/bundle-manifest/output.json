@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "cn.wch.ch34xuartdemo",
+  "applicationId": "com.example.administrator.wuanandroids",
   "variantType": "BASE_APK",
   "elements": [
     {
@@ -19,7 +19,7 @@
       },
       "path": "AndroidManifest.xml",
       "properties": {
-        "packageId": "cn.wch.ch34xuartdemo",
+        "packageId": "com.example.administrator.wuanandroids",
         "split": "",
         "minSdkVersion": "12"
       }

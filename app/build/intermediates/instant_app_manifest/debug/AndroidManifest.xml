@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.wch.ch34xuartdemo"
+    package="com.example.administrator.wuanandroids"
     android:targetSandboxVersion="2"
     android:versionCode="12"
     android:versionName="1.2" >

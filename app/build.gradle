@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
 
     defaultConfig {
-        applicationId "cn.wch.ch34xuartdemo"
+        applicationId "com.example.administrator.wuanandroids"
         minSdkVersion 12
         targetSdkVersion 19
     }
